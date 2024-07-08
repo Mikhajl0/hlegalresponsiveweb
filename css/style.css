@@ -376,15 +376,14 @@ body {
 }
 
 .wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 315px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .cards-inner {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
   gap: 30px;
 }
 
@@ -417,7 +416,6 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  width: 315px;
 }
 .cards-icon {
   display: inline-block;
@@ -482,33 +480,26 @@ body {
 
 @media (min-width: 768px) {
   .wrapper {
-    width: 648px;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .services-title {
+    font-size: 38px;
+    line-height: 46px;
   }
   .cards-inner {
-    flex-direction: row;
     gap: 60px;
-  }
-  .cards-div {
-    width: 294px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
   .cards-link {
     display: block;
   }
 }
 @media (min-width: 1024px) {
-  .wrapper {
-    width: 904px;
-  }
-  .cards-div {
-    width: 261px;
-  }
-}
-@media (min-width: 1440px) {
-  .wrapper {
-    width: 1320px;
-  }
-  .cards-div {
-    width: 400px;
+  .cards-inner {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 @media (min-width: 1920px) {
@@ -517,17 +508,11 @@ body {
     margin-left: auto;
     margin-right: auto;
   }
-  .wrapper {
-    width: 1600px;
-  }
-  .cards-div {
-    width: 493px;
-  }
 }
 .partners {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
 }
 .partners-link {
   display: flex;
@@ -579,15 +564,8 @@ body {
 }
 @media (min-width: 768px) {
   .partners {
-    flex-direction: row;
-  }
-  .partners-link {
-    width: 33.33%;
-  }
-}
-@media (min-width: 1024px) {
-  .partners-link {
-    width: 25%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
   }
 }
 @media (min-width: 1920px) {
@@ -597,6 +575,124 @@ body {
     margin-right: auto;
     border-radius: 20px;
     overflow: hidden;
+  }
+}
+.publications {
+  background-color: #F5F5FA;
+  padding-top: 30px;
+}
+.publications-top {
+  display: grid;
+  gap: 30px;
+  margin-top: 30px;
+  grid-template-columns: 1fr;
+}
+.publications-link {
+  text-decoration: none;
+  color: #24A3FF;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  margin-bottom: 5px;
+}
+.publications-link:hover {
+  color: #F0145A;
+}
+.publications-title {
+  font-size: 30px;
+  line-height: 36px;
+  background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+.publications-bloc {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.publications-cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #FFFFFF;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.publications-images {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px 8px 0 0;
+  object-fit: cover;
+  object-position: center;
+}
+.publications-container {
+  padding: 30px;
+}
+.publications-name {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #24A3FF;
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-decoration: none;
+  display: block;
+}
+.publications-data {
+  font-size: 12px;
+  line-height: 15px;
+  color: #B3B3BA;
+  margin-bottom: 15px;
+}
+.publications-text {
+  padding-top: 15px;
+  border-top: 4px solid #E6E6F0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #000000;
+  margin: 0;
+}
+
+.publications-link:hover .publications-svg path {
+  stroke: #F0145A;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .publications-title {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  .publications-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .publications-cards:nth-child(3) {
+    grid-column: 1/-1;
+  }
+  .publications-link {
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 1024px) {
+  .publications-top {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .publications-cards:nth-child(3) {
+    grid-column: auto/auto;
+  }
+}
+@media (min-width: 1920px) {
+  .wrapper {
+    width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 160px;
+    padding-right: 160px;
   }
 }
 

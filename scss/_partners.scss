@@ -3,9 +3,9 @@
 }
 
 .partners {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
     &-link {
         display: flex;
@@ -62,17 +62,8 @@
 
 @media (min-width: 768px) {
     .partners {
-        flex-direction: row;
-    }
-
-    .partners-link {
-        width: 33.33%;
-    }
-}
-
-@media (min-width: 1024px) {
-    .partners-link {
-        width: 25%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     }
 }
 
